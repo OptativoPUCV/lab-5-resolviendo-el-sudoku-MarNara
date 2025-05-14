@@ -110,17 +110,17 @@ List* get_adj_nodes(Node* n){
 Almacene en la variable cont, la cantidad de iteraciones que realiza el algoritmo.*/
 
 int is_final(Node* n){
-  Stack* pila = createStack();
-  push(pila, n);
-  /*
-  while(get_size(pila) != 0){
-    Node* new_nodo = pop(pila);
-  }*/
     return 0;
     
 }
 
 Node* DFS(Node* initial, int* cont){
+  /*Stack* pila = createStack();
+  push(pila, n);
+  
+  while(get_size(pila) != 0){
+    Node* new_nodo = pop(pila);
+  }*/
   return NULL;
 }
 
