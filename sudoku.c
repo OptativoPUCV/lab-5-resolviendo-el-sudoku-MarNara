@@ -44,8 +44,12 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-
-    return 1;
+  /*int ver[10];
+  for(int k = 0; k < 9;k++){
+    for(int i =)
+  }
+*/
+  return 1;
 }
 
 
@@ -55,13 +59,13 @@ List* get_adj_nodes(Node* n){
     int esta = 0;
     //recorrer el sudoku
     for(int i = 0; i < 9 && !esta; i++){
-      for(int k = 0; k < 9 && !esta; k++){
-        if(n->sudo[i][k] == 0)
+      for(int j = 0; j < 9 && !esta; j++){
+        if(n->sudo[i][j] == 0)
         {
           esta = 1;
           for(int v = 1; v <= 9; v++){
             Node* nuevo_nodo = copy(n);//recordar que necesito una copia del nodo no un nuevo nodo
-            nuevo_nodo->sudo[i][k] = v;
+            nuevo_nodo->sudo[i][j] = v;
             pushBack(list, nuevo_nodo);//agrego el nodo
 
           }
