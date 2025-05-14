@@ -55,7 +55,7 @@ int is_valid(Node* n){
         return 0;
       }
       ver[numero] = 1;
-      int k=4,p; 
+      int k,p; 
       for(p=0;p<9;p++){
         int i=3*(k/3) + (p/3) ;
         int j=3*(k%3) + (p%3) ;
