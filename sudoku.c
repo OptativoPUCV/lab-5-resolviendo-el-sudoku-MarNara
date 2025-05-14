@@ -60,8 +60,9 @@ List* get_adj_nodes(Node* n){
             pushBack(list, nuevo_nodo);//agrego el nodo
 
           }
+          return list;
         }
-        return list;
+        
       }
     }
     return list;
