@@ -46,7 +46,7 @@ void print_node(Node* n){
 int is_valid(Node* n){
   int ver[10];
   for(int i = 0; i < 9;i++){
-    for(int k = 0 ; k < 9; k++){
+    for(int k = 0 ; k < 10; k++){
       ver[k] = 0;
     } 
     for(int j = 0; j < 9; j++){
@@ -64,8 +64,6 @@ int is_valid(Node* n){
       }
     }
   }
-
-  
   return 1;
 }
 
