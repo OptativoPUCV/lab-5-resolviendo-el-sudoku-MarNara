@@ -48,20 +48,20 @@ int is_valid(Node* n){
   //validar por partes, porque dice que por su culpa me sale mal el get
   //validar las ilas
   for(int i = 0; i < 9;i++){
-    int ver[10];
+    int ver[10]= {0};//iniciar un arreglo de 10 para verificar si ya aparecieron numeros del 1 al 9.
 
     for(int j = 0; j < 9; j++){
       int numero = n->sudo[i][j];
-      if(numero && ver[numero]){
+      if(numero && ver[numero]){ // si ya apareció no es valido
         return 0;
       }
-      ver[numero] = 1;
+      ver[numero] = 1;//aqui marcamos la primera aparicion del num
     }
   }
 
   //validar las columnas
   for(int i = 0; i < 9;i++){
-    int ver[10];
+    int ver[10]= {0};
     for(int j = 0; j < 9; j++){
       int numero = n->sudo[j][i];
       if(numero && ver[numero]){
@@ -75,7 +75,7 @@ int is_valid(Node* n){
   //revisar cada numero o bloque en el que se encuentra el numero de la matriz realizando un "doble matriz"
   for(int bloqueNum_k = 0; bloqueNum_k < 3; bloqueNum_k++){
     for(int bloqueNum_l = 0; bloqueNum_l < 3; bloqueNum_l++){
-      int ver[10];
+      int ver[10] = {0};
       for(int k = 0; k < 3;k++){
         for(int l = 0; l < 3; l++){
           int numero = n->sudo[k][l];
