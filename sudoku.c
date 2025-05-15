@@ -44,7 +44,7 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int ver[10];
+  int ver[10] = {0};
   //validar por partes, porque dice que por su culpa me sale mal el get
   //validar las ilas
   for(int i = 0; i < 9;i++){
@@ -72,6 +72,7 @@ int is_valid(Node* n){
   //revisar cada numero o bloque en el que se encuentra el numero de la matriz realizando un "doble matriz"
   for(int bloqueNum_k = 0; bloqueNum_k < 3; bloqueNum_k++){
     for(int bloqueNum_l = 0; bloqueNum_l < 3; bloqueNum_l++){
+      
       for(int k = 0; k < 3;k++){
         for(int l = 0; l < 3; l++){
           int numero = n->sudo[k][l];
