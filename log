@@ -140,3 +140,9 @@ ju., 15 de may. de 2025 16:37:47:
  tests:  5|3
 total_score: 35/70
 7e2dc71
+ju., 15 de may. de 2025 17:39:59: 
+ sudoku.c | 17 +++++++++++++----
+ 1 file changed, 13 insertions(+), 4 deletions(-)
+ tests:  6|3
+total_score: 40/70
+1e3585e
