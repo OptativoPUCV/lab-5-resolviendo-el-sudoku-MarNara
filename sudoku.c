@@ -45,6 +45,32 @@ void print_node(Node* n){
 
 int is_valid(Node* n){
   int ver[10];
+  //validar por partes, porque dice que por su culpa me sale mal el get
+  //validar las ilas
+  for(int i = 0; i < 9;i++){
+    for(int j = 0; j < 9; j++){
+      int numero = n->sudo[i][j];
+      if(numero && ver[numero]){
+        return 0;
+      }
+      ver[numero] = 1;
+    }
+  }
+
+  //validar las columnas
+  for(int i = 0; i < 9;i++){
+    for(int j = 0; j < 9; j++){
+      int numero = n->sudo[j][i];
+      if(numero && ver[numero]){
+        return 0;
+      }
+      ver[numero] = 1;
+    }
+  }
+
+  //validar las submatrices
+  /*
+  int ver[10];
   for(int i = 0; i < 9;i++){
     for(int k = 0 ; k < 10; k++){
       ver[k] = 0;
@@ -56,7 +82,6 @@ int is_valid(Node* n){
       }
       ver[numero] = 1;
       
-      /*
       int h = 3 * (i/3) + (j /3);
       int p;  
       for(p=0;p<9;p++){
@@ -66,9 +91,9 @@ int is_valid(Node* n){
         if(p%3 == 2) printf("\n");
       }
       printf("\n");
-      */
+      
     }
-  }
+  }*/
   return 1;
 }
 
