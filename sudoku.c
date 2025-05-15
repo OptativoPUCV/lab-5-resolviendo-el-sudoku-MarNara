@@ -82,7 +82,14 @@ List* get_adj_nodes(Node* n){
           for(int v = 1; v <= 9; v++){
             Node* nuevo_nodo = copy(n);//recordar que necesito una copia del nodo no un nuevo nodo
             nuevo_nodo->sudo[i][j] = v;
-            pushBack(list, nuevo_nodo);//agrego el nodo
+            if(is_valid(nuevo_nodo)){
+              pushBack(list, nuevo_nodo);//agrego el nodo
+            }
+            else{
+              free(nuevo_nodo);
+            }
+            
+            
 
           }
         }
