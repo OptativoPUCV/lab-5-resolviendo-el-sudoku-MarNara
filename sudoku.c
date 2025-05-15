@@ -112,12 +112,12 @@ Almacene en la variable cont, la cantidad de iteraciones que realiza el algoritm
 int is_final(Node* n){
   for(int i = 0; i < 9; i++){
     for(int j = 0; j < 9; j++){
-      if(n->sudo != 0){
-        return 1;
+      if(n->sudo == 0){
+        return 0;
       } 
     }
   }
-    return 0;
+    return 1;
     
 }
 
