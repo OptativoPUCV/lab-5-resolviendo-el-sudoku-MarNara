@@ -147,6 +147,19 @@ List* get_adj_nodes(Node* n){
     return list;
 }
 
+
+int is_final(Node* n){
+  for(int i = 0; i < 9; i++){
+    for(int j = 0; j < 9; j++){
+      if(n->sudo[i][j] == 0){//recordar que sudo es una matriz :(
+        return 0;
+      } 
+    }
+  }
+  return 1;
+    
+}
+
 /*1. Cree un stack S (pila) e inserte el nodo.
 2. Mientras el stack S no se encuentre vacío:
 
@@ -163,18 +176,6 @@ List* get_adj_nodes(Node* n){
 3. Si terminó de recorre el grafo sin encontrar una solución, retorne NULL.
 
 Almacene en la variable cont, la cantidad de iteraciones que realiza el algoritmo.*/
-
-int is_final(Node* n){
-  for(int i = 0; i < 9; i++){
-    for(int j = 0; j < 9; j++){
-      if(n->sudo[i][j] == 0){//recordar que sudo es una matriz :(
-        return 0;
-      } 
-    }
-  }
-  return 1;
-    
-}
 
 Node* DFS(Node* initial, int* cont){
   /*
