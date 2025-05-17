@@ -161,15 +161,15 @@ int is_final(Node* n){
 }
 
 /*1. Cree un stack S (pila) e inserte el nodo.
-2. Mientras el stack S no se encuentre vacío:
+2. Mientras el stack S(pila) no se encuentre vacío:
 
-   a) Saque y elimine el primer nodo de S.
+   a) Saque y elimine el primer nodo de S./
    
-   b) Verifique si corresponde a un estado final, si es así retorne el nodo.
+   b) Verifique si corresponde a un estado final, si es así retorne el nodo./
    
-   c) Obtenga la lista de nodos adyacentes al nodo.
+   c) Obtenga la lista de nodos adyacentes al nodo. /
    
-   d) Agregue los nodos de la lista (uno por uno) al stack S.
+   d) Agregue los nodos de la lista (uno por uno) al stack S. //probar con while
    
    e) Libere la memoria usada por el nodo.
    
@@ -178,15 +178,32 @@ int is_final(Node* n){
 Almacene en la variable cont, la cantidad de iteraciones que realiza el algoritmo.*/
 
 Node* DFS(Node* initial, int* cont){
-  /*
-  Stack* pila = createStack();
+  
+  Stack* pila = createStack();//S
   push(pila, initial);
   
-  while(get_size(pila) != 0){
-    Node* new_nodo = (Node*)pop(pila);
+  while(!is_empty(pila) != 0){
+    Node* new_nodo = (Node*)top(pila);
+    pop(pila);
+    
+    if(is_final(new_nodo)){
+      return new_nodo;
+    }
+    List * lista_adja = get_adj_nodes(new_nodo);
+    //usar el primer nodo para recorrer la lista
+    Node* current_nodo = (Node*)first(lista_adja);//nodo para recorrer la lista
+    while(current_nodo != NULL) {  //para agregar se usaba push
+      push(pila, current_nodo);
+      //aumentar cont
+      cont++,
+      //pasar al siguiente
+      current_nodo = (Node*) next(lista_adja);
+    }
+    free(new_nodo);
+    
   }
   return NULL;
-  */
+  
 }
 
 
