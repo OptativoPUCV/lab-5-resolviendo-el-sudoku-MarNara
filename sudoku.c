@@ -63,7 +63,7 @@ int is_valid(Node* n){
   for(int i = 0; i < 9;i++){
     int ver[10]= {0};
     for(int j = 0; j < 9; j++){
-      int numero = n->sudo[j][i];
+      int numero = n->sudo[i][j];
       if(numero && ver[numero]){
         return 0;
       }
