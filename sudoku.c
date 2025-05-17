@@ -206,7 +206,7 @@ int visitados(List* visitados_lis, Node* n){
 Node* DFS(Node* initial, int* cont){//al parecer necesito una funcion extra que verifique los visitados
   
   Stack* pila = createStack();//S
-  push(pila, copy(initial));
+  push(pila, initial);
   
   //crear una lista para ver los nodos visitados
   //List* visi = createList();
@@ -236,6 +236,7 @@ Node* DFS(Node* initial, int* cont){//al parecer necesito una funcion extra que 
       //pasar al siguiente
       current_nodo = (Node*) next(lista_adja);
     }
+    free(lista_adja);
     free(new_nodo);
   }
   return NULL;
