@@ -203,6 +203,7 @@ Node* DFS(Node* initial, int* cont){//al parecer necesito una funcion extra que 
       //pasar al siguiente
       nodo_aux = next(lista_adja);
     }
+    free(new_nodo);
   }
   return NULL;
 }
