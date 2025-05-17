@@ -206,7 +206,7 @@ int visitados(List* visitados_lis, Node* n){
 Node* DFS(Node* initial, int* cont){//al parecer necesito una funcion extra que verifique los visitados
   
   Stack* pila = createStack();//S
-  push(pila, initial);
+  push(pila, copy(initial));
   
   while(!is_empty(pila)){
     Node* new_nodo = (Node*)top(pila);
