@@ -134,7 +134,7 @@ int is_valid(Node* n){
   return 1;
 }
 
-
+//Modifique la función *get_adj_nodes* para que sólo los nodos válidos sean retornados (use la función *is_valid*).
 List* get_adj_nodes(Node* n){
     List* list=createList();
     //comprobar si hay o no uno
@@ -223,6 +223,7 @@ Node* DFS(Node* initial, int* cont){//al parecer necesito una funcion extra que 
     free(new_nodo);
     
   }
+  free(pila);
   return NULL;
 }
 
