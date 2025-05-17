@@ -254,3 +254,9 @@ vi., 16 de may. de 2025 20:00:36:
  tests:  8|1
 total_score: 60/70
 6a2e587
+vi., 16 de may. de 2025 20:03:14: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  7|1
+total_score: 55/70
+49d33f8
