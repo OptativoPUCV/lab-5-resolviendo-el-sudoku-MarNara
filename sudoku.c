@@ -200,7 +200,7 @@ Almacene en la variable cont, la cantidad de iteraciones que realiza el algoritm
 Node* DFS(Node* initial, int* cont){//al parecer necesito una funcion extra que verifique los visitados
   
   Stack* pila = createStack();//S
-  push(pila,initial);
+  push(pila, copy(initial));
   
   while(!is_empty(pila)){
     Node* new_nodo = top(pila);
@@ -215,7 +215,7 @@ Node* DFS(Node* initial, int* cont){//al parecer necesito una funcion extra que 
     //usar el primer nodo para recorrer la lista
     Node* nodo_aux = (Node*)first(lista_adja);//nodo para recorrer la lista
     while(nodo_aux != NULL) {  //para agregar se usaba push
-      push(pila, nodo_aux);
+      push(pila, copy(nodo_aux));
       //pasar al siguiente
       nodo_aux = next(lista_adja);
     }
