@@ -237,7 +237,7 @@ Node* DFS(Node* initial, int* cont){//al parecer necesito una funcion extra que 
       current_nodo = (Node*) next(lista_adja);
     }
     free(lista_adja);
-    free(new_nodo);
+    free(current_nodo);
   }
   return NULL;
   
