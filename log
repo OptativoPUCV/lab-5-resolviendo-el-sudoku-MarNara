@@ -335,3 +335,23 @@ test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous 
     7 | char * _strdup(const char * str) {
       |        ^~~~~~~
 c7198e8
+vi., 16 de may. de 2025 20:47:38: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+sudoku.c: In function 'DFS':
+sudoku.c:220:14: error: passing argument 1 of 'pushBack' from incompatible pointer type [-Wincompatible-pointer-types]
+  220 |     pushBack(visitados, copy(new_nodo));//agregar una copia del nuevo nodo a los visitadois para no repetir
+      |              ^~~~~~~~~
+      |              |
+      |              int (*)(List *, Node *)
+In file included from test.c:4:
+list.h:23:21: note: expected 'List *' but argument is of type 'int (*)(List *, Node *)'
+   23 | void pushBack(List* list, void* data);
+      |               ~~~~~~^~~~
+test.c: At top level:
+test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+b5d7f21
