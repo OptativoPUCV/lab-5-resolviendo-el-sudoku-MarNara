@@ -185,7 +185,8 @@ Node* DFS(Node* initial, int* cont){
   while(!is_empty(pila)){
     Node* new_nodo = (Node*)top(pila);
     pop(pila);
-    
+    //contar iteraciones cont
+    cont++;
     if(is_final(new_nodo)){
       return new_nodo;
     }
@@ -194,15 +195,13 @@ Node* DFS(Node* initial, int* cont){
     Node* current_nodo = (Node*)first(lista_adja);//nodo para recorrer la lista
     while(current_nodo != NULL) {  //para agregar se usaba push
       push(pila, current_nodo);
-      //aumentar cont
-      cont++,
       //pasar al siguiente
       current_nodo = (Node*) next(lista_adja);
     }
     free(new_nodo);
-    return NULL;
+    
   }
-  
+  return NULL;
   
 }
 
