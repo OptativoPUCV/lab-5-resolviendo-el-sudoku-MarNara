@@ -320,3 +320,18 @@ vi., 16 de may. de 2025 20:27:54:
  tests:  8|1
 total_score: 60/70
 62352a1
+vi., 16 de may. de 2025 20:47:04: 
+ sudoku.c | 35 +++++++++++++++++++++++++++++++++--
+ 1 file changed, 33 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+sudoku.c: In function 'DFS':
+sudoku.c:220:5: error: implicit declaration of function 'pushback'; did you mean 'pushBack'? [-Wimplicit-function-declaration]
+  220 |     pushback(visitados, copy(new_nodo));//agregar una copia del nuevo nodo a los visitadois para no repetir
+      |     ^~~~~~~~
+      |     pushBack
+test.c: At top level:
+test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+c7198e8

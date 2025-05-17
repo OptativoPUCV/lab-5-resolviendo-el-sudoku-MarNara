@@ -177,30 +177,61 @@ int is_final(Node* n){
 
 Almacene en la variable cont, la cantidad de iteraciones que realiza el algoritmo.*/
 
-Node* DFS(Node* initial, int* cont){
+//necesito la funcion visitados para saber cuales fueron visitados
+int iguales(Node * a, Node * b){
+  for(int i = 0; i < 9; i++){
+    for(int j = 0; j < 9; j++){
+      if(a->sudo[i][j] != b->sudo[i][j]){//recordar que sudo es una matriz :(
+        return 0;
+      } 
+    }
+  }
+  return 1;
+}
+
+int visitados(List* visitados_lis, Node* n){
+  Node* aux = (Node*)first(visitados_lis);//nodo para recorrer la lista
+    while(aux != NULL) {  //para agregar se usaba push
+      if(iguales(aux, n)){
+        return 1;
+      }
+      //pasar al siguiente
+      aux = (Node*) next(visitados_lis);
+    }
+  return 0;
+}
+
+Node* DFS(Node* initial, int* cont){//al parecer necesito una funcion extra que verifique los visitados
   
   Stack* pila = createStack();//S
   push(pila, copy(initial));
   
+  //crear una lista para ver los nodos visitados
+  List* visi = createList();
+
   while(!is_empty(pila)){
     Node* new_nodo = (Node*)top(pila);
     pop(pila);
     //contar iteraciones cont
     (*cont)++;
+
+    if(visitados(visi, new_nodo)) continue;
+  
+    pushback(visitados, copy(new_nodo));//agregar una copia del nuevo nodo a los visitadois para no repetir
+
     if(is_final(new_nodo)){
       return new_nodo;
     }
+
     List * lista_adja = get_adj_nodes(new_nodo);
     //usar el primer nodo para recorrer la lista
     Node* current_nodo = (Node*)first(lista_adja);//nodo para recorrer la lista
     while(current_nodo != NULL) {  //para agregar se usaba push
       push(pila, current_nodo);
       //pasar al siguiente
-      
       current_nodo = (Node*) next(lista_adja);
     }
     free(new_nodo);
-    free(lista_adja);
   }
   return NULL;
   
