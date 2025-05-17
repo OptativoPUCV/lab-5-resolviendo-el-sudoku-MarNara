@@ -182,7 +182,7 @@ Node* DFS(Node* initial, int* cont){
   Stack* pila = createStack();//S
   push(pila, copy(initial));
   
-  while(is_empty(pila) != 0){
+  while(!is_empty(pila)){
     Node* new_nodo = (Node*)top(pila);
     pop(pila);
     //contar iteraciones cont
