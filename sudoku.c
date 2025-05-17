@@ -80,7 +80,7 @@ int is_valid(Node* n){
         for(int l = 0; l < 3; l++){
           int fila = 3 * bloqueNum_k + k;
           int cola = 3 * bloqueNum_l + l;
-          int numero = n->sudo[k][l];
+          int numero = n->sudo[fila][cola];
           if(numero && ver[numero]){
             return 0;
           }
