@@ -78,6 +78,8 @@ int is_valid(Node* n){
       int ver[10] = {0};
       for(int k = 0; k < 3;k++){
         for(int l = 0; l < 3; l++){
+          int fila = 3 * bloqueNum_k + k;
+          int cola = 3 * bloqueNum_l + l;
           int numero = n->sudo[k][l];
           if(numero && ver[numero]){
             return 0;
@@ -215,7 +217,10 @@ Node* DFS(Node* initial, int* cont){//al parecer necesito una funcion extra que 
     //contar iteraciones cont
     (*cont)++;
 
-    //if(visitados(visi, new_nodo)) continue;
+    /*if(visitados(visi, new_nodo)){
+      free(new_nodo);
+      continue;
+    } */
   
     pushBack(visi, copy(new_nodo));//agregar una copia del nuevo nodo a los visitadois para no repetir
 
