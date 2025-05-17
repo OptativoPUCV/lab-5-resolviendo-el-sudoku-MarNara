@@ -73,6 +73,8 @@ int is_valid(Node* n){
 
   //validar las submatrices, usar k y l
   //revisar cada numero o bloque en el que se encuentra el numero de la matriz realizando un "doble matriz"
+
+  /*
   for(int k = 0; k < 9; k++){
     int ver[10]= {0};
     for(int p=0;p<9;p++){
@@ -85,9 +87,9 @@ int is_valid(Node* n){
         ver[numero] = 1;
     }
   }
-    
+  */
 
-  /*
+  
   for(int bloqueNum_k = 0; bloqueNum_k < 3; bloqueNum_k++){
     for(int bloqueNum_l = 0; bloqueNum_l < 3; bloqueNum_l++){
       int ver[10] = {0};
@@ -104,7 +106,7 @@ int is_valid(Node* n){
       }
     }
   }
-  */
+  
 
   /*
   int ver[10];
