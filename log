@@ -355,3 +355,9 @@ test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous 
     7 | char * _strdup(const char * str) {
       |        ^~~~~~~
 b5d7f21
+vi., 16 de may. de 2025 20:50:15: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  8|1
+total_score: 60/70
+0002aec
