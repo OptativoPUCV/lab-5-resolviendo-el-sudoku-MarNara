@@ -197,11 +197,11 @@ Node* DFS(Node* initial, int* cont){//al parecer necesito una funcion extra que 
 
     List * lista_adja = get_adj_nodes(new_nodo);
     //usar el primer nodo para recorrer la lista
-    Node* current_nodo = (Node*)first(lista_adja);//nodo para recorrer la lista
-    while(current_nodo != NULL) {  //para agregar se usaba push
-      push(pila, current_nodo);
+    Node* nodo_aux = (Node*)first(lista_adja);//nodo para recorrer la lista
+    while(nodo_aux != NULL) {  //para agregar se usaba push
+      push(pila, nodo_aux);
       //pasar al siguiente
-      current_nodo = next(lista_adja);
+      nodo_aux = next(lista_adja);
     }
   }
   return NULL;
