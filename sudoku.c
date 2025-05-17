@@ -229,6 +229,7 @@ Node* DFS(Node* initial, int* cont){//al parecer necesito una funcion extra que 
     free(lista_adja);
     free(new_nodo);
   }
+  free(pila);
   return NULL;
   
 }
