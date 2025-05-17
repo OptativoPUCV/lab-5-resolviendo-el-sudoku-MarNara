@@ -209,7 +209,7 @@ Node* DFS(Node* initial, int* cont){//al parecer necesito una funcion extra que 
   push(pila, copy(initial));
   
   //crear una lista para ver los nodos visitados
-  List* visi = createList();
+  //List* visi = createList();
 
   while(!is_empty(pila)){
     Node* new_nodo = (Node*)top(pila);
@@ -222,7 +222,7 @@ Node* DFS(Node* initial, int* cont){//al parecer necesito una funcion extra que 
       continue;
     } */
   
-    pushBack(visi, copy(new_nodo));//agregar una copia del nuevo nodo a los visitadois para no repetir
+    //pushBack(visi, copy(new_nodo));//agregar una copia del nuevo nodo a los visitadois para no repetir
 
     if(is_final(new_nodo)){
       return new_nodo;
